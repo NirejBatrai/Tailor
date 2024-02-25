@@ -1,23 +1,37 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
-}
-.home-container {
-  background-image: url(/Tailor/src/assets/suit.jpg);
-}
-
 .container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+  text-align: center;
+  background-color: black; /* Set the background color to black */
+  padding: 20px; /* Add some padding for better visibility */
+}
+
+.img {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-top: 20px; /* Adjust margin top as needed */
+  animation-name: spin, moveUpDown; /* Specify the name of the animations */
+  animation-duration: 20s, 5s; /* Durations of the animations */
+  animation-timing-function: linear, ease-in-out; /* Timing functions of the animations */
+  animation-iteration-count: infinite;
+  box-shadow: 0 0 10px rgba(33, 22, 58, 0.5); /* Repeat the animations infinitely */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(10deg); /* Start rotation angle */
+  }
+  100% {
+    transform: rotate(360deg); /* Rotate to 360 degrees */
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0); /* Start position */
+  }
+  50% {
+    transform: translateY(30px); /* Move down */
+  }
+  100% {
+    transform: translateY(0); /* Move back up */
+  }
 }
